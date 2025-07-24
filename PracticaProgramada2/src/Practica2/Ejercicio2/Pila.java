@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author XSF
  */
 public class Pila {
-    private Nodo cima;
+    Nodo cima;
 
     public Pila() {
         this.cima = null;
