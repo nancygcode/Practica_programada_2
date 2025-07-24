@@ -2,7 +2,7 @@ package Practica2;
 
 /**
  *
- * @author Nancy
+ * @author fabii
  */
 public class Principal {
 
@@ -11,6 +11,9 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Menu menu = new Menu();
+        menu.opciones();
+       
     }
     
 }

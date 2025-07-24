@@ -13,8 +13,8 @@ public class ListaProducto {
     public void listaProductos() {
         for (int i = 0; i < productos.length; i++) {
             Producto p = new Producto();
-            p.setCodigo(JOptionPane.showInputDialog("Digite el código del producto " + (i + 1)));
-            p.setDescripcion(JOptionPane.showInputDialog("Digite la descripción del producto " + (i + 1)));
+            p.setCodigo(JOptionPane.showInputDialog("Digite el codigo del producto " + (i + 1)));
+            p.setDescripcion(JOptionPane.showInputDialog("Digite la descripcion del producto " + (i + 1)));
             p.setCantidad(Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad en inventario del producto " + (i + 1))));
             p.setPrecioUnitario(Double.parseDouble(JOptionPane.showInputDialog("Digite el precio unitario del producto " + (i + 1))));
             productos[i] = p;
@@ -27,8 +27,8 @@ public class ListaProducto {
             for (int i = 0; i < productos.length; i++) {
                 if (productos[i] != null) { // por si hay espacios vacíos
                     s += "Código: " + productos[i].getCodigo()
-                            + " | Desc: " + productos[i].getDescripcion()
-                            + " | Cant: " + productos[i].getCantidad()
+                            + " | Descuento: " + productos[i].getDescripcion()
+                            + " | Cantantidad: " + productos[i].getCantidad()
                             + " | Precio: " + productos[i].getPrecioUnitario()
                             + "\n---------------------------------\n";
                 }
@@ -43,5 +43,14 @@ public class ListaProducto {
                     "Lista Vacía",
                     JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public Producto buscarProductoPorCodigo(String codigo) {
+        for (Producto p : productos) {
+            if (p != null && p.getCodigo().equalsIgnoreCase(codigo)) {
+                return p;
+            }
+        }
+        return null; // no encontrado
     }
 }
